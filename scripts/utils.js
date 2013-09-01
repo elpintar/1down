@@ -1,3 +1,9 @@
+/*
+    Carnegie Mellon 15-237 Project 1
+    1-Down
+    Group: Erik Pintar, Connor Brem, Leon Zhang
+*/
+
 UP_KEYCODE = 38;
 DOWN_KEYCODE = 40;
 LEFT_KEYCODE = 37;

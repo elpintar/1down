@@ -1,4 +1,10 @@
 /*
+    Carnegie Mellon 15-237 Project 1
+    1-Down
+    Group: Erik Pintar, Connor Brem, Leon Zhang
+*/
+
+/*
 Interface:
     Properties:
         * this.spritesOnScreen: an array of all EnvBlock objects currently

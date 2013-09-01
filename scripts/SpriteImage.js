@@ -1,3 +1,9 @@
+/*
+    Carnegie Mellon 15-237 Project 1
+    1-Down
+    Group: Erik Pintar, Connor Brem, Leon Zhang
+*/
+
 /** SpriteImage(String)
     handles the graphics for a sprite (ex: drawing and animation frame handling)
     (note: images must have been preloaded before using this class)

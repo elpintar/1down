@@ -1,3 +1,9 @@
+/*
+    Carnegie Mellon 15-237 Project 1
+    1-Down
+    Group: Erik Pintar, Connor Brem, Leon Zhang
+*/
+
 function startGame(){
     console.log('starting game with src data:', SpriteImage.sourcesData);
     var game = new Game();
@@ -65,7 +71,7 @@ function preloadImages(loadedCallback){
 function Game() {
     var self = this;
 
-    var _gameFps = 30;
+    var _gameFps = 40;
     var environment,
         player,
         collisions,
@@ -152,7 +158,6 @@ function Game() {
         if (self.time > self.nextTransition) {
             // activate GAP (if X direction is moving, make drop)
             if (self.scrollX !== 0){
-                //console.log("GAP TRANSISTION at ", self.time);
                 self.transitionDrop = true;
                 // this gets overridden when they fall
                 // and is a safety in case they don't
@@ -160,12 +165,10 @@ function Game() {
             }
             // activate STOP FALLING when 1down is hit (see collisions)
             else if (self.transitionLand) {
-                //console.log("STOP FALLING TRANSISTION at ", self.time);
                 self.nextTransition = self.time + randomInt(200,450);
                 // increase speed!
                 self.scrollSpeed -= 3;
                 player.maxVelX += 3;
-                //console.log("NEW SPEEDS: player-", player.maxVelX, " level-", -self.scrollSpeed)
                 environment.init(self, self.height, false);
                 allEnemies._init();
                 self.fallTutorial = false;
@@ -173,11 +176,10 @@ function Game() {
         }
         // activate FALLING
         if ((!self.falling) && (player.y > 500)) {
-           // console.log("FALLING NOW!");
             self.falling = true;
             self.startFallingCount = 40;
             self.scrollX = 0;
-            self.scrollY = -10;
+            self.scrollY = -8;
             self.nextTransition = self.time + 50;
             if (self.mushroomCount === 0) {
                 self.fallTutorial = true;
@@ -321,7 +323,6 @@ function Game() {
         var canvX, canvY;
         canvX = e.pageX - canvas.offsetLeft;
         canvY = e.pageY - canvas.offsetTop;
-        //alert("You clicked on the canvas at (" + canvX + ", " + canvY + ").");
 
         clicks.push(e);
     };
@@ -329,7 +330,6 @@ function Game() {
     var onKeyDown = function (e) {
         //react to key
         var keyCode = util_getKeyCode(e);
-        //alert("Keycode of the pressed key is " + keyCode);
         
         // prevent webpage from moving while moving player
         if(util_isPageMoveKeyCode(keyCode)){
@@ -379,7 +379,7 @@ function Game() {
         this.gameOver = false;
         this.transitionDrop = false;
         this.transitionLand = false;
-        this.nextTransition = 100;
+        this.nextTransition = 50;
         this.nextEnvironment = 0;
         this.falling = false;
         

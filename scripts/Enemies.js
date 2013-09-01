@@ -1,3 +1,9 @@
+/*
+    Carnegie Mellon 15-237 Project 1
+    1-Down
+    Group: Erik Pintar, Connor Brem, Leon Zhang
+*/
+
 function Enemy(type, x, y){
     this._init = function(type, x, y){
         assert(Enemy.types[type] !== undefined, "Enemy type '"+type+

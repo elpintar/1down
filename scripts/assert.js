@@ -1,3 +1,9 @@
+/*
+    Carnegie Mellon 15-237 Project 1
+    1-Down
+    Group: Erik Pintar, Connor Brem, Leon Zhang
+*/
+
 /** assert: (expression, String)
 
  general assertion handler to automatically stop execution on assertion failure
